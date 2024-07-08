@@ -1,0 +1,148 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-06-01T19:17:47.994Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "11",
+    "object_repr": "фрукты",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-06-02T19:16:00.956Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "27",
+    "object_repr": "Бананы  Фрукты 150",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-06-02T19:16:07.940Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "27",
+    "object_repr": "Бананы  Фрукты 150",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-06-02T19:16:26.116Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "28",
+    "object_repr": "огурца  Овощи 45",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-06-02T22:12:41.675Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "28",
+    "object_repr": "огурцы  Овощи 45",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0438\\u043c\\u0435\\u043d\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-06-02T22:12:51.395Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "28",
+    "object_repr": "Огурцы  Овощи 45",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0438\\u043c\\u0435\\u043d\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$2ArpAxmn5cyfJxDydMuPSP$V7OJZzMwKleBrRR4T5XPTF5Bm3Lsf3iDsDRNEZkgvag=",
+    "last_login": "2024-05-31T21:25:22.529Z",
+    "is_superuser": true,
+    "username": "konys",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-31T21:23:15.991Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "diklsr8huk84b9zjyre70ngvadpepmer",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAGChWX7nsGAsOMVA0kpV0Z765NutDtf-_9lwhxW0vYOi1hzuIiQJx-txTxQXUH-R7rrUlsdV3mJHdFHrTLqWV6Xg_376DEXr41YrJAGAeDQIq8AmW1SayyReYzAY86I3tMY3JOczSDNh6UY5eBCcT7AwoKOKw:1sD9kY:b-2SQCQlGL2jrZCXA2lmUYRqBm0LZtUgpJy-WTI-lRw",
+    "expire_date": "2024-06-14T21:25:22.534Z"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 13,
+  "fields": {
+    "name": "Овощи",
+    "description": "Полезности"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 14,
+  "fields": {
+    "name": "Фрукты",
+    "description": "Вкусняшки"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 27,
+  "fields": {
+    "name": "Бананы",
+    "description": "",
+    "image": "products/фото_бананов.jpg",
+    "category": 14,
+    "price": 150,
+    "created_at": "2024-06-02",
+    "updated_at": "2024-06-02"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 28,
+  "fields": {
+    "name": "Огурцы",
+    "description": "",
+    "image": "products/Фото_огурцы.jpg",
+    "category": 13,
+    "price": 45,
+    "created_at": "2024-06-02",
+    "updated_at": "2024-06-02"
+  }
+}
+]

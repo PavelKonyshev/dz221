@@ -1,0 +1,40 @@
+{% extends 'catalog/home.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        {% for products in object_list %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal"> {{ products.category }}</h4>
+                    <h4 class="my-0 font-weight-normal"> {{ products.name }}</h4>
+                    <h4 class="my-0 font-weight-normal"> {{ products.description | truncatechars_html:100 }}</h4>
+                    <p class="card-text">Количество просмотров:  {{ products.number_views }}</p>
+                </div>
+                    <img src="{{ products.image | media_filters }}">
+                    <div class="card-body">
+                    
+                        <a class="btn btn-primary" href="{% url 'catalog:product_detail' products.pk %}" role="button">Посмотреть</a>
+                        <a class="btn btn-primary" href="{% url 'catalog:product_update' products.pk %}" role="button">Редактировать</a>
+                        <a class="btn btn-danger" href="{% url 'catalog:product_delete' products.pk %}" role="button">Удалить</a>
+                    </div>
+                    {% if product.in_stock %}
+                    <a class="btn btn-danger" href="{% url 'catalog:toggle_in_stock' products.pk %}" role="button">Нет в наличии</a>
+                    {% else %}
+                    <a class="btn btn-success" href="{% url 'catalog:toggle_in_stock' products.pk %}" role="button">В наличии</a>
+                    {% endif %}
+                </div>
+            </div>
+            <p class="card-footer">
+                Версия: {{ products.active_version }}
+                {% if products.number_version %}
+                   (№ {{ products.number_version }})
+                {% endif %}
+            </p>
+          </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
