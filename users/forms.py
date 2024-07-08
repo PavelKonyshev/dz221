@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
-sudo passwd root.from catalog.forms import StyleFormMixin
+from catalog.forms import StyleFormMixin
 from users.models import User
 
 
