@@ -1,4 +1,5 @@
 from django.db import models
+from users.models import User
 
 NULLABLE = {"blank": True, "null": True}
 
@@ -47,6 +48,8 @@ class Product(models.Model):
         help_text="Укажите количество просмотров",
         default=0,
     )
+    owner = models.ForeignKey(User, verbose_name="Владелец", blank=True, null=True, on_delete=models.SET_NULL
+                              )
 
     def __str__(self):
         return f"{self.name} {self.price}"
