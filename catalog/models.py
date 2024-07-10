@@ -61,12 +61,8 @@ class Product(models.Model):
         permissions = [
             ('can_change_in_stock', 'Can change in stock'),
             ('can_edit_description', 'Can edit description'),
-            ('can_edit_category', 'Can edit category')
+            ('can_edit_category', 'Can edit category'),
         ]
-
-
-
-
 
 class Version(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='продукт', related_name='prod')
