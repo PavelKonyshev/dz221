@@ -24,6 +24,7 @@ class Category(models.Model):
 # Создание класса продукт
 class Product(models.Model):
 
+
     name = models.CharField(
         max_length=100,
         verbose_name="Наименование",

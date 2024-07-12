@@ -1,3 +1,4 @@
+from catalog.services import get_product_from_cache, get_categories_from_cache
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
@@ -7,12 +8,11 @@ from django.views.generic import CreateView, ListView, DetailView, UpdateView, D
 from pytils.translit import slugify
 
 from .forms import ProductForm, VersionForm, ProductModeratorForm
-from .models import Product, Version
+from .models import Product, Version, Category
 
 
 class ProductListView(ListView):
     model = Product
-
     def get_context_data(self, *args, **kwargs):
         context_data = super().get_context_data(*args, **kwargs)
         list_product = Product.objects.all()
@@ -28,7 +28,8 @@ class ProductListView(ListView):
 
         context_data['object_list'] = list_product
         return context_data
-
+    def get_queryset(self):
+        return get_product_from_cache()
 
 class ProductDetailView(DetailView):
     model = Product
@@ -113,3 +114,9 @@ def toggle_in_stock(request, pk):
 
 class ContactPageView(TemplateView):
     template_name = "catalog/contacts.html"
+
+class CategoryListView(ListView):
+    model = Category
+
+    def get_queryset(self):
+        return get_categories_from_cache()

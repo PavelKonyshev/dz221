@@ -1,0 +1,28 @@
+{% extends 'catalog/home.html' %}
+{% block content %}
+<div class="col-12">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">
+                    Список категорий
+                </h1>
+            </div>
+            <table class="table">
+                <tr>
+                    <th scope="col">Название</th>
+                    <th scope="col">Описание</th>
+                </tr>
+                <tbody>
+                {% for category in object_list %}
+                <tr>
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.description }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
